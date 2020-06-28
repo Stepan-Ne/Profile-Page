@@ -1,21 +1,15 @@
-import React from 'react';
+import React from "react";
 import './App.css';
+import ProfilePage from "./ProfilePage/ProfilePage";
+
+
 
 const App = () => {
     return (
         <div>
-            Hello World!
+            <ProfilePage/>
         </div>
     )
 }
-//
-// function App() {
-//   return (
-//     <div className="App">
-//       <h2>Hello!</h2>
-//     </div>
-//   );
-// }
-//
-// export default App;
+
 export default App;
