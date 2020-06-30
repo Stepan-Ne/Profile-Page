@@ -1,25 +1,13 @@
 import React from "react";
-import s from './Wall.module.css'
+import Post from "./Post/Post";
 
 
-let postData = [
-    {id: 1, text: 'Hello!'},
-    {id: 2, text: 'Hi there!'},
-    {id: 3, text: 'I sent message!'}
-]
 
 
-const Post = (props) => {
+const Wall = (props) => {
 
-    return (
-        <div className={s.post}>
-            {props.text}
-        </div>
-    )
-}
-let newElem = postData.map(post => <Post id={post.id} text={post.text}/>)
+    let newElem = props.postData.map(post => <Post id={post.id} text={post.text}/>)
 
-const Wall = () => {
     return (
         <div>
             <div>

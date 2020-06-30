@@ -3,10 +3,11 @@ import s from './ProfilePage.module.css'
 import Wall from "./Wall/Wall";
 
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
+
     return (
         <div>
-            <Wall/>
+            <Wall postData={props.postData}/>
         </div>
     )
 }

@@ -4,12 +4,12 @@ import ProfilePage from "./ProfilePage/ProfilePage";
 import s from "./ProfilePage/ProfilePage.module.css";
 import Nav from "./ProfilePage/NavBar/Nav";
 import Dialogs from "./ProfilePage/Dialogs/Dialogs";
-import Wall from "./ProfilePage/Wall/Wall";
 import {BrowserRouter, Route} from "react-router-dom";
 
 
 
-const App = () => {
+const App = (props) => {
+    debugger
     return (
         <BrowserRouter>
             <div className={s.profilePage}>
@@ -21,7 +21,8 @@ const App = () => {
                         <Nav/>
                     </div>
                     <div className={s.profile}>
-                        <Route path='/profile' component={ProfilePage}/>
+                        <Route path='/profile'
+                               render={() => <ProfilePage postData={props.postData}/>}/>
                         <Route path='/dialogs' component={Dialogs}/>
                     </div>
 
