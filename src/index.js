@@ -3,16 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import state from './Redux/state'
 
-let postData = [
-    {id: 1, text: 'Hello!'},
-    {id: 2, text: 'Hi there!'},
-    {id: 3, text: 'I sent message!'}
-]
 
 ReactDOM.render(
   <React.StrictMode>
-    <App postData={postData}/>
+    <App appState={state}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
