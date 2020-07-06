@@ -7,7 +7,7 @@ const ProfilePage = (props) => {
 
     return (
         <div>
-            <Wall postData={props.postData}/>
+            <Wall postData={props.postData} addPost={props.addPost}/>
         </div>
     )
 }

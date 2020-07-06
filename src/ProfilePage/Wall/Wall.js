@@ -5,12 +5,15 @@ import Post from "./Post/Post";
 
 
 const Wall = (props) => {
+    let linkText = React.createRef()
 
     let onAddPost = () => {
-        console.log(txt.current.value)
+        let textValue = linkText.current.value
+        linkText.current.value = ''
+        props.addPost(textValue)
+
     }
 
-    let txt = React.createRef()
 
     let newElem = props.postData.map(post => <Post id={post.id} text={post.text} likes={post.likes}/>)
 
@@ -18,7 +21,7 @@ const Wall = (props) => {
         <div>
             <div>
                 <p>Create post</p>
-                <textarea ref={txt} placeholder='write here' cols="30" rows="5"></textarea>
+                <textarea ref={linkText} placeholder='write here' cols="30" rows="5"/>
             </div>
             <div>
                 <button onClick={onAddPost}>Add Post</button>
