@@ -3,3 +3,14 @@
     padding: 1em;
     margin: 1rem;
 }
+.like {
+    display: inline-block;
+    background-color: #1abc9c;
+    padding: 10px;
+}
+.numOfLikes {
+    display: inline-block;
+    background-color: lightsalmon;
+    border-radius: 45%;
+    padding: 10px;
+}
