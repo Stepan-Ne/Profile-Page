@@ -1,5 +1,6 @@
 import React from "react";
 import Post from "./Post/Post";
+import {actionCreatorAddPost, actionCreatorUpdateText} from "../../Redux/state";
 
 
 const Wall = (props) => {
@@ -7,12 +8,12 @@ const Wall = (props) => {
     let linkText = React.createRef()
 
     let onAddPost = () => {
-        props.dispatch({type: 'ADD-POST'})
+        props.dispatch(actionCreatorAddPost())
         linkText.current.value = ''
     }
     let changeText = () => {
         let textValue = linkText.current.value
-        props.dispatch({type: 'UPDATE-NEW-TEXT', newText: textValue})
+        props.dispatch(actionCreatorUpdateText(textValue))
     }
 
 

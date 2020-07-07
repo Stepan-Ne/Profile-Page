@@ -1,3 +1,5 @@
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_TEXT = 'UPDATE-NEW-TEXT'
 
 let state = {
     postData: {
@@ -30,7 +32,10 @@ let state = {
         }
     }
 }
-
+export const actionCreatorAddPost = () => ({type: ADD_POST})
+export const actionCreatorUpdateText = (txt) => {
+    return {type: UPDATE_NEW_TEXT, newText: txt}
+}
 // window.state = state
 
 export default state;
