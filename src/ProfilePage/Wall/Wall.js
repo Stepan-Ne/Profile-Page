@@ -7,14 +7,12 @@ const Wall = (props) => {
     let linkText = React.createRef()
 
     let onAddPost = () => {
-        let textValue = linkText.current.value
-        props.addPost(textValue)
-        props.newText('')
-
+        props.dispatch({type: 'ADD-POST'})
+        linkText.current.value = ''
     }
     let changeText = () => {
         let textValue = linkText.current.value
-        props.newText(textValue)
+        props.dispatch({type: 'UPDATE-NEW-TEXT', newText: textValue})
     }
 
 
@@ -25,7 +23,6 @@ const Wall = (props) => {
             <div>
                 <p>Create post</p>
                 <textarea onChange={changeText} ref={linkText}
-                          value={props.newPostText}
                           placeholder='write here' cols="30" rows="5"/>
             </div>
             <div>

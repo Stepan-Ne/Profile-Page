@@ -5,18 +5,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {BrowserRouter} from "react-router-dom";
 
 
- let rerenderState = () => {
+ let rerenderState = (stateData) => {
     ReactDOM.render(
-        <React.StrictMode>
-            <App appState={state}/>
-        </React.StrictMode>,
+        <BrowserRouter>
+            <App postData={stateData} dispatch={state.dispatch.bind(state)}/>
+        </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
-rerenderState(state.postData)
+rerenderState(state.postData.posts)
 state.subscribe(rerenderState)
 
 

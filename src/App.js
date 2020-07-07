@@ -9,8 +9,9 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 
 const App = (props) => {
+
     return (
-        <BrowserRouter>
+
             <div className={s.profilePage}>
                 <div className={s.header}>
                     Header
@@ -22,18 +23,15 @@ const App = (props) => {
                     <div className={s.profile}>
                         <Route path='/profile'
                                render={() => <ProfilePage
-                                   postData={props.appState.postData}
-                                   addPost={props.appState.addPost}
-                                   newPostText={props.appState.newPostText}
-                                   newText={props.appState.newText}
-                               />}/>
+                                   postData={props.postData}
+                                   dispatch={props.dispatch}/>}/>
                         <Route path='/dialogs' component={Dialogs}/>
                     </div>
 
                 </div>
             </div>
 
-        </BrowserRouter>
+
     )
 }
 
