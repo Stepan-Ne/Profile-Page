@@ -5,25 +5,24 @@ import {actionCreatorAddPost, actionCreatorUpdateText} from "../../Redux/state";
 
 const Wall = (props) => {
 
-    let linkText = React.createRef()
-
     let onAddPost = () => {
         props.dispatch(actionCreatorAddPost())
-        linkText.current.value = ''
+        //linkText.current.value = ''
     }
-    let changeText = () => {
-        let textValue = linkText.current.value
+    let changeText = (event) => {
+        let textValue = event.target.value
         props.dispatch(actionCreatorUpdateText(textValue))
     }
 
 
-    let newElem = props.postData.map(post => <Post id={post.id} text={post.text} likes={post.likes}/>)
+    let newElem = props.postData.posts.map(post => <Post
+        id={post.id} text={post.text} likes={post.likes}/>)
 
     return (
         <div>
             <div>
                 <p>Create post</p>
-                <textarea onChange={changeText} ref={linkText}
+                <textarea onChange={changeText} value={props.postData.newPostText}
                           placeholder='write here' cols="30" rows="5"/>
             </div>
             <div>

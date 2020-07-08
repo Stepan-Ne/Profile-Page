@@ -4,7 +4,7 @@ import ProfilePage from "./ProfilePage/ProfilePage";
 import s from "./ProfilePage/ProfilePage.module.css";
 import Nav from "./ProfilePage/NavBar/Nav";
 import Dialogs from "./ProfilePage/Dialogs/Dialogs";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 
 

@@ -9,6 +9,7 @@ import {BrowserRouter} from "react-router-dom";
 
 
  let rerenderState = (stateData) => {
+
     ReactDOM.render(
         <BrowserRouter>
             <App postData={stateData} dispatch={state.dispatch.bind(state)}/>
@@ -17,7 +18,7 @@ import {BrowserRouter} from "react-router-dom";
     );
 }
 
-rerenderState(state.postData.posts)
+rerenderState(state.postData)
 state.subscribe(rerenderState)
 
 
