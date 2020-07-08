@@ -1,8 +1,5 @@
 import reducerWall from "./reducer-wall";
 
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_TEXT = 'UPDATE-NEW-TEXT'
-
 let state = {
     postData: {
         posts: [
@@ -20,17 +17,13 @@ let state = {
     },
 
     dispatch(action) {
-
         this.postData = reducerWall(action, this.postData)
         this.rerenderSt(this.postData)
 
     }
 }
 
-export const actionCreatorAddPost = () => ({type: ADD_POST})
-export const actionCreatorUpdateText = (txt) => {
-    return {type: UPDATE_NEW_TEXT, newText: txt}
-}
+
 // window.state = state
 
 export default state;

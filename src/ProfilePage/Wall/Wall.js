@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Post/Post";
-import {actionCreatorAddPost, actionCreatorUpdateText} from "../../Redux/state";
+import {actionCreatorAddPost, actionCreatorUpdateText} from "../../Redux/reducer-wall";
 
 
 const Wall = (props) => {
