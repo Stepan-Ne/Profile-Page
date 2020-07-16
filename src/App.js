@@ -23,7 +23,7 @@ const App = (props) => {
                     <div className={s.profile}>
                         <Route path='/profile'
                                render={() => <ProfilePage
-                                   postData={props.postData}
+                                   postData={props.postData.reducerWall}
                                    dispatch={props.dispatch}/>}/>
                         <Route path='/dialogs' component={Dialogs}/>
                     </div>

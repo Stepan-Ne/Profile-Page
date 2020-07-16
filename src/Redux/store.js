@@ -1,6 +1,6 @@
 import reducerWall from "./reducer-wall";
 
-let state = {
+let store = {
     postData: {
         posts: [
             {id: 1, text: 'Hello!', likes: 3},
@@ -15,15 +15,13 @@ let state = {
     rerenderSt() {
         console.log('hi')
     },
-
     dispatch(action) {
         this.postData = reducerWall(action, this.postData)
         this.rerenderSt(this.postData)
-
     }
 }
 
 
-// window.state = state
+// window.store = store
 
-export default state;
+export default store;
