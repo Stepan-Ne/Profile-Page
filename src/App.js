@@ -22,9 +22,7 @@ const App = (props) => {
                     </div>
                     <div className={s.profile}>
                         <Route path='/profile'
-                               render={() => <ProfilePage
-                                   postData={props.postData.reducerWall}
-                                   dispatch={props.dispatch}/>}/>
+                               render={() => <ProfilePage store={props.store}/>}/>
                         <Route path='/dialogs' component={Dialogs}/>
                     </div>
 

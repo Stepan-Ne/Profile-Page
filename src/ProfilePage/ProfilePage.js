@@ -1,11 +1,12 @@
 import React from "react";
 import Wall from "./Wall/Wall";
+import WallContainer from "./Wall/WallContainer";
 
 
 const ProfilePage = (props) => {
     return (
         <div>
-            <Wall postData={props.postData} dispatch={props.dispatch}/>
+            <WallContainer store={props.store}/>
         </div>
     )
 }

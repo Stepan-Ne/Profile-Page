@@ -12,13 +12,14 @@ import {BrowserRouter} from "react-router-dom";
 debugger
     ReactDOM.render(
         <BrowserRouter>
-            <App postData={state} dispatch={store.dispatch.bind(store)}/>
+            <App store={store} />
         </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
 rerenderState(store.getState())
+
 store.subscribe(() => {
     let state = store.getState()
     rerenderState(state)
