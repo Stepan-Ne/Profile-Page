@@ -18,7 +18,7 @@ const Wall = (props) => {
 
 
     let newElem = props.postData.map(post => <Post
-        id={post.id} text={post.text} likes={post.likes}/>)
+        id={post.id} key={post.id} text={post.text} likes={post.likes}/>)
 
     return (
         <div>

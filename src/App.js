@@ -5,6 +5,7 @@ import s from "./ProfilePage/ProfilePage.module.css";
 import Nav from "./ProfilePage/NavBar/Nav";
 import Dialogs from "./ProfilePage/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
+import Users from "./Users/Users";
 
 
 
@@ -23,6 +24,7 @@ const App = (props) => {
                     <div className={s.profile}>
                         <Route path='/profile' render={() => <ProfilePage />}/>
                         <Route path='/dialogs' component={Dialogs}/>
+                        <Route path='/users' render={() => <Users/>} />
                     </div>
 
                 </div>
