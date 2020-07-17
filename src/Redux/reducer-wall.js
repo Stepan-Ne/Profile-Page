@@ -13,20 +13,23 @@ let x = {
 const reducerWall = (state = x, action) => {
 
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 4,
                 text: state.newPostText,
                 likes: 0
             };
-            state.posts.push(newPost)
-            state.newPostText = ''
-            return state
-
-        case UPDATE_NEW_TEXT:
-            state.newPostText = action.newText
-            return state
-
+            let copyState = {...state}
+            copyState.posts = [...state.posts]
+            copyState.posts.push(newPost)
+            copyState.newPostText = ''
+            return copyState
+        }
+        case UPDATE_NEW_TEXT: {
+            let copyState = {...state}
+            copyState.newPostText = action.newText
+            return copyState
+        }
         default:
             return state
     }
