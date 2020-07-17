@@ -21,8 +21,7 @@ const App = (props) => {
                         <Nav/>
                     </div>
                     <div className={s.profile}>
-                        <Route path='/profile'
-                               render={() => <ProfilePage store={props.store}/>}/>
+                        <Route path='/profile' render={() => <ProfilePage />}/>
                         <Route path='/dialogs' component={Dialogs}/>
                     </div>
 

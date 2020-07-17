@@ -1,4 +1,3 @@
-
 import * as serviceWorker from './serviceWorker';
 import store from './Redux/redux-store'
 import React from 'react';
@@ -6,15 +5,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
+import StoreContext, {Provider} from "./StoreContext";
 
 
- let rerenderState = (state) => {
-debugger
+let rerenderState = (state) => {
+
     ReactDOM.render(
         <BrowserRouter>
-            <App store={store} />
-        </BrowserRouter>,
-        document.getElementById('root')
+            <Provider value={store}>
+                <App/>
+            </Provider>
+        </BrowserRouter>, document.getElementById('root')
     );
 }
 

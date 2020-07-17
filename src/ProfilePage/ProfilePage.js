@@ -6,7 +6,7 @@ import WallContainer from "./Wall/WallContainer";
 const ProfilePage = (props) => {
     return (
         <div>
-            <WallContainer store={props.store}/>
+            <WallContainer />
         </div>
     )
 }
